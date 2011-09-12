@@ -112,6 +112,10 @@ module EnumerateBy
   end
 end
 
-ActiveRecord::Serialization::Serializer.class_eval do
+ActiveRecord::Serialization::JSON.class_eval do
+  include EnumerateBy::Extensions::Serializer
+end
+
+ActiveRecord::Serialization::Xml.class_eval do
   include EnumerateBy::Extensions::Serializer
 end
